@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">SMJ-Note</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="ma_fiche">Ma fiche</string>
+    <string name="bac_es">Bac ES</string>
+    <string name="no_notes">No Notes Yet</string>
+    <string name="menu_insert">Add Fiche</string>
+    <string name="menu_delete">Delete Fiche</string>
+    <string name="title">Nom de la fiche</string>
+    <string name="body">Corps</string>
+    <string name="confirm">Confirm</string>
+    <string name="edit_note">Edit Fiche</string>
+</resources>
