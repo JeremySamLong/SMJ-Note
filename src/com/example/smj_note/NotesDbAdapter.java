@@ -38,7 +38,7 @@ public class NotesDbAdapter {
 	
 	// table note
 	public static final String KEY_TITLE = "title";
-	//public static final String KEY_BODY = "body";
+	public static final String KEY_BODY = "body";
 	public static final String KEY_ROWID = "_id";
 	
 	private static final String KEY_ID_NOTE = "idNote";
@@ -50,13 +50,13 @@ public class NotesDbAdapter {
 	/**
 	 * Database creation sql statement
 	 */
-/*	
+	
 	private static final String DATABASE_CREATE =
 			"create table notes (_id integer primary key autoincrement, "
-			+ "title text not null, body text not null);";*/
+			+ "title text not null, body text not null);";
 	
-	private static final String DATABASE_CREATE = "create table notes (_id integer primary key autoincrement, "
-			+ "title text not null)";
+	/*private static final String DATABASE_CREATE = "create table notes (_id integer primary key autoincrement, "
+			+ "title text not null)";*/
 	
 	private static final String DATABASE_NAME = "data";
 	private static final String TABLE_NOTE = "notes";
@@ -127,20 +127,20 @@ public class NotesDbAdapter {
 	 *            the title of the note
 	 * @return rowId or -1 if failed
 	 */
-/*	public long createNote(String title, String body) {
+	public long createNote(String title, String body) {
 		ContentValues initialValues = new ContentValues();
 		initialValues.put(KEY_TITLE, title);
 		initialValues.put(KEY_BODY, body);
 
 		return mDb.insert(TABLE_NOTE, null, initialValues);
 	}
-	*/
-	public long createNote(String title) {
+	
+	/*public long createNote(String title) {
 		ContentValues initialValues = new ContentValues();
 		initialValues.put(KEY_TITLE, title);
 		
 	return mDb.insert(TABLE_NOTE, null, initialValues);
-	}
+	}*/
 	
 	//------------------------------DELETE-------------------------------------
 	/**
@@ -162,9 +162,9 @@ public class NotesDbAdapter {
 	 */
 	public Cursor fetchAllNotes() {
 
-		/*return mDb.query(TABLE_NOTE, new String[] { KEY_ROWID, KEY_TITLE,
-				KEY_BODY }, null, null, null, null, null);*/
-		return mDb.query(TABLE_NOTE, new String[] { KEY_ROWID, KEY_TITLE}, null, null, null, null, null);
+		return mDb.query(TABLE_NOTE, new String[] { KEY_ROWID, KEY_TITLE,
+				KEY_BODY }, null, null, null, null, null);
+		//return mDb.query(TABLE_NOTE, new String[] { KEY_ROWID, KEY_TITLE}, null, null, null, null, null);
 	}
 
 	/**
@@ -180,12 +180,12 @@ public class NotesDbAdapter {
 
 		Cursor mCursor =
 
-		/*mDb.query(true, TABLE_NOTE, new String[] { KEY_ROWID,
-				KEY_TITLE, KEY_BODY}, KEY_ROWID + "=" + rowId, null, null, null, null,
-				null);*/
 		mDb.query(true, TABLE_NOTE, new String[] { KEY_ROWID,
-				KEY_TITLE}, KEY_ROWID + "=" + rowId, null, null, null, null,
+				KEY_TITLE, KEY_BODY}, KEY_ROWID + "=" + rowId, null, null, null, null,
 				null);
+		/*mDb.query(true, TABLE_NOTE, new String[] { KEY_ROWID,
+				KEY_TITLE}, KEY_ROWID + "=" + rowId, null, null, null, null,
+				null);*/
 		if (mCursor != null) {
 			mCursor.moveToFirst();
 		}
@@ -206,17 +206,16 @@ public class NotesDbAdapter {
 	 *            value to set note title to
 	 * @return true if the note was successfully updated, false otherwise
 	 */
-/*	public boolean updateNote(long rowId, String title, String body) {
+	public boolean updateNote(long rowId, String title, String body) {
 		ContentValues args = new ContentValues();
 		args.put(KEY_TITLE, title);
 		args.put(KEY_BODY, body);
 		return mDb.update(TABLE_NOTE, args, KEY_ROWID + "=" + rowId, null) > 0;
 	}
-	*/
 	
-	public boolean updateNote(long rowId, String title) {
+	/*public boolean updateNote(long rowId, String title) {
 		ContentValues args = new ContentValues();
 		args.put(KEY_TITLE, title);
 		return mDb.update(TABLE_NOTE, args, KEY_ROWID + "=" + rowId, null) > 0;
-	}
+	}*/
 }

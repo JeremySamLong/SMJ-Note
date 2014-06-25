@@ -69,9 +69,12 @@ public class Notepadv3 extends ListActivity {
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		super.onCreateOptionsMenu(menu);
-		menu.add(0, INSERT_ID, 0, R.string.menu_insert);
+		menu.add(0, INSERT_ID, 0, R.string.menu_ajout);
+		menu.add(0, INSERT_ID, 0, R.string.menu_sync);
+		menu.add(0, INSERT_ID, 0, R.string.menu_rec);
 		return true;
 	}
+
 
 	@Override
 	public boolean onMenuItemSelected(int featureId, MenuItem item) {

@@ -28,7 +28,7 @@ import android.widget.Toast;
 public class NoteEdit extends Activity {
 
 	private EditText mTitleText;
-	//private EditText mBodyText;
+	private EditText mBodyText;
 	private Long mRowId;
 	private NotesDbAdapter mDbHelper;
 	private Bundle extras;
@@ -44,7 +44,7 @@ public class NoteEdit extends Activity {
 		setContentView(R.layout.note_edit);
 		setTitle("Edit note");
 		mTitleText = (EditText) findViewById(R.id.title);
-		//mBodyText = (EditText) findViewById(R.id.body);
+		mBodyText = (EditText) findViewById(R.id.body);
 		
 			Button confirmButton = (Button) findViewById(R.id.confirm);
 	
@@ -85,10 +85,10 @@ public class NoteEdit extends Activity {
 		if (mRowId != null) {
 			Cursor note = mDbHelper.fetchNote(mRowId);
 			startManagingCursor(note);
-			mTitleText.setText(note.getString(note
-					.getColumnIndexOrThrow(NotesDbAdapter.KEY_TITLE)));
-			/*mBodyText.setText(note.getString(note
-					.getColumnIndexOrThrow(FichesDbAdapter.KEY_BODY)));*/
+			mTitleText.setText(note.getString(
+					note.getColumnIndexOrThrow(NotesDbAdapter.KEY_TITLE)));
+			mBodyText.setText(note.getString(
+					note.getColumnIndexOrThrow(NotesDbAdapter.KEY_BODY)));
 		}
 	}
 
@@ -114,7 +114,7 @@ public class NoteEdit extends Activity {
 	private void saveState() {
 		long id=0;
 		String title = mTitleText.getText().toString();
-		//String body = mBodyText.getText().toString();
+		String body = mBodyText.getText().toString();
 		if(mTitleText.getText().toString().isEmpty() && ok==false)
 			Toast.makeText(getApplicationContext(), "Aucune note enregistrée", Toast.LENGTH_SHORT).show();
 		else if(!mTitleText.getText().toString().isEmpty() && ok==true)
@@ -123,8 +123,8 @@ public class NoteEdit extends Activity {
 			if (mRowId == null) //ajout
 			{
 				
-				//id = mDbHelper.createFiche(title, body);
-				id = mDbHelper.createNote(title);
+				id = mDbHelper.createNote(title, body);
+				//id = mDbHelper.createNote(title);
 				Toast.makeText(getApplicationContext(), "La note "+ mTitleText.getText().toString()+ " a été enregistrée", Toast.LENGTH_SHORT).show();
 				mRowId =id;
 
@@ -135,20 +135,20 @@ public class NoteEdit extends Activity {
 			}
 			 else  //edition
 			 {
-				
 				String ancienTexte;
 				Cursor note = mDbHelper.fetchNote(mRowId);
 				ancienTexte=(note.getString(note
 						.getColumnIndexOrThrow(NotesDbAdapter.KEY_TITLE)).toString());
 				if(!title.contentEquals(ancienTexte))
 				{
-					//mDbHelper.updateNote(mRowId, title, body);
-					mDbHelper.updateNote(mRowId, title);
+					mDbHelper.updateNote(mRowId, title, body);
+					//mDbHelper.updateNote(mRowId, title);
 					Toast.makeText(getApplicationContext(), "La note "+ ancienTexte+ " a été modifiée en "+ mTitleText.getText().toString(), Toast.LENGTH_SHORT).show();
 				}	
 					
 			}
 		}		
+		
 	}
 
 }
