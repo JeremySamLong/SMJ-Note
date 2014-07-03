@@ -37,7 +37,7 @@
         android:layout_alignRight="@+id/buttonRec"
         android:layout_below="@+id/buttonNote"
         android:layout_marginTop="14dp"
-        android:onClick="OnClickRec"
+        android:onClick="onClickSync"
         android:text="Synchroniser" />
 
 </RelativeLayout>

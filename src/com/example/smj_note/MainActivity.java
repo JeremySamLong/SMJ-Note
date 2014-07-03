@@ -31,4 +31,9 @@ public class MainActivity extends Activity {
 		  Intent intent = new Intent(this, Rec.class);
 		  this.startActivity(intent);
 	  }
+	public void onClickSync (View v)
+	  {
+		  Intent intent = new Intent(this, sync.class);
+		  this.startActivity(intent);
+	  }
 }
