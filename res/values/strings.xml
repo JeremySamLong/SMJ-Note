@@ -10,7 +10,9 @@
     <string name="menu_rec">Record</string>
     <string name="menu_delete">Delete Note</string>
     <string name="title">Nom de la Note</string>
+    <string name="title2">Mes notes</string>
     <string name="body">Corps</string>
     <string name="confirm">Confirm</string>
     <string name="edit_note">Edit Note</string>
+    <color name="bordeaux">#610B0B</color>
 </resources>
