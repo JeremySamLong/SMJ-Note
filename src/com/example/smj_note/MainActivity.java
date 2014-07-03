@@ -22,7 +22,13 @@ public class MainActivity extends Activity {
 
 	public void onClickNote (View v)
 	  {
-		  Intent intent = new Intent(this, Notepadv3.class);
+		  Intent intent = new Intent(this, NoteSQLite.class);
+		  this.startActivity(intent);
+	  }
+	
+	public void onClickRec (View v)
+	  {
+		  Intent intent = new Intent(this, Rec.class);
 		  this.startActivity(intent);
 	  }
 }

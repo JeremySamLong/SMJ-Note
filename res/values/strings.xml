@@ -4,7 +4,7 @@
     <string name="action_settings">Settings</string>
     <string name="hello_world">Hello world!</string>
     <string name="ma_fiche">Ma Note</string>
-    <string name="no_notes">No Notes Yet</string>
+    <string name="no_notes">Aucune note enregistrée</string>
     <string name="menu_ajout">Ajouter Note</string>
     <string name="menu_sync">Synchroniser</string>
     <string name="menu_rec">Record</string>

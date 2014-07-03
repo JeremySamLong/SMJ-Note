@@ -25,20 +25,27 @@ public final class R {
         public static final int ic_launcher=0x7f020000;
     }
     public static final class id {
-        public static final int action_settings=0x7f080007;
+        public static final int action_settings=0x7f08000b;
         public static final int body=0x7f080004;
-        public static final int button1=0x7f080000;
-        public static final int button2=0x7f080001;
-        public static final int button3=0x7f080002;
+        public static final int buttonNote=0x7f080000;
+        public static final int buttonPlayRec=0x7f080008;
+        public static final int buttonRec=0x7f080001;
+        public static final int buttonStopPlay=0x7f080009;
+        public static final int buttonStopRec=0x7f080007;
+        public static final int buttonSync=0x7f080002;
         public static final int confirm=0x7f080005;
+        public static final int listView1=0x7f08000a;
         public static final int text1=0x7f080006;
         public static final int title=0x7f080003;
     }
     public static final class layout {
         public static final int accueil=0x7f030000;
         public static final int note_edit=0x7f030001;
-        public static final int notes_list=0x7f030002;
+        public static final int notes_liste=0x7f030002;
         public static final int notes_row=0x7f030003;
+        public static final int rec=0x7f030004;
+        public static final int rec_accueil=0x7f030005;
+        public static final int rec_liste=0x7f030006;
     }
     public static final class menu {
         public static final int main=0x7f070000;

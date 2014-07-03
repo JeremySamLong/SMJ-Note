@@ -1,19 +1,3 @@
-/*
- * Copyright (C) 2008 Google Inc.
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
 package com.example.smj_note;
 
 import android.app.ListActivity;
@@ -29,33 +13,33 @@ import android.widget.ListView;
 import android.widget.SimpleCursorAdapter;
 import android.widget.AdapterView.AdapterContextMenuInfo;
 
-public class Notepadv3 extends ListActivity {
+public class NoteSQLite extends ListActivity {
 	private static final int ACTIVITY_CREATE = 0;
 	private static final int ACTIVITY_EDIT = 1;
 
 	private static final int INSERT_ID = Menu.FIRST;
 	private static final int DELETE_ID = Menu.FIRST + 1;
 
-	private NotesDbAdapter mDbHelper;
+	private NoteBdd bdd;
 
-	/** Called when the activity is first created. */
+	//La 1ère activité lancée
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.notes_list);
-		mDbHelper = new NotesDbAdapter(this);
-		mDbHelper.open();
-		fillData();
+		setContentView(R.layout.notes_liste);
+		bdd = new NoteBdd(this);
+		bdd.open();
+		recupDonnees();
 		registerForContextMenu(getListView());
 	}
 
-	private void fillData() {
-		Cursor notesCursor = mDbHelper.fetchAllNotes();
+	private void recupDonnees() {
+		Cursor notesCursor = bdd.fetchAllNotes();
 		startManagingCursor(notesCursor);
 
 		// Create an array to specify the fields we want to display in the list
 		// (only TITLE)
-		String[] from = new String[] { NotesDbAdapter.KEY_TITLE };
+		String[] from = new String[] { NoteBdd.KEY_TITLE };
 
 		// and an array of the fields we want to bind those fields to (in this
 		// case just text1)
@@ -100,8 +84,8 @@ public class Notepadv3 extends ListActivity {
 		case DELETE_ID:
 			AdapterContextMenuInfo info = (AdapterContextMenuInfo) item
 					.getMenuInfo();
-			mDbHelper.deleteNote(info.id);
-			fillData();
+			bdd.deleteNote(info.id);
+			recupDonnees();
 			return true;
 		}
 		return super.onContextItemSelected(item);
@@ -116,7 +100,7 @@ public class Notepadv3 extends ListActivity {
 	protected void onListItemClick(ListView l, View v, int position, long id) {
 		super.onListItemClick(l, v, position, id);
 		Intent i = new Intent(this, NoteEdit.class);
-		i.putExtra(NotesDbAdapter.KEY_ROWID, id);
+		i.putExtra(NoteBdd.KEY_ROWID, id);
 		startActivityForResult(i, ACTIVITY_EDIT);
 	}
 
@@ -124,6 +108,6 @@ public class Notepadv3 extends ListActivity {
 	protected void onActivityResult(int requestCode, int resultCode,
 			Intent intent) {
 		super.onActivityResult(requestCode, resultCode, intent);
-		fillData();
+		recupDonnees();
 	}
 }
