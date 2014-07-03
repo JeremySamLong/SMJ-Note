@@ -23,18 +23,6 @@
         android:textColor="@color/bordeaux" />
 
     <Button
-        android:id="@+id/buttonRec"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="168dp"
-        android:onClick="onClickRec"
-        android:text="Mes Enregistrements"
-        android:background="@android:color/transparent"
-        android:textColor="@color/bordeaux" />
-
-    <Button
         android:id="@+id/addnotebutton"
         android:layout_width="50dp"
         android:layout_height="wrap_content"
@@ -72,8 +60,20 @@
                     android:layout_marginTop="18dp"
                     android:layout_toRightOf="@+id/addsyncbutton"
                     android:background="@android:color/transparent"
-                    android:onClick="OnClickRec"
+                    android:onClick="onClickSync"
                     android:text="Synchroniser"
+                    android:textColor="@color/bordeaux" />
+
+                <Button
+                    android:id="@+id/buttonRec"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="17dp"
+                    android:background="@android:color/transparent"
+                    android:onClick="onClickRec"
+                    android:text="Mes Enregistrements"
                     android:textColor="@color/bordeaux" />
 
 </RelativeLayout>
