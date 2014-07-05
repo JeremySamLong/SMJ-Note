@@ -1,36 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:background="@drawable/notelist" >
-
-    <Button
-        android:id="@+id/buttonRec"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:onClick="onClickRec"
-        android:text="Démarrer l&apos;enregistrement" />
-
-    <Button
-        android:id="@+id/buttonStopRec"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:onClick="onClickRec"
-        android:text="Stopper l&apos;enregistrement" />
+    android:background="@drawable/notelist"
+    android:orientation="vertical" >
 
     <Button
         android:id="@+id/buttonPlayRec"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/buttonStopRec"
+        android:layout_alignRight="@+id/buttonRec"
+        android:layout_below="@+id/buttonStopRec"
         android:onClick="onClickRec"
         android:text="Jouer l&apos;enregistrement" />
+
+    <Button
+        android:id="@+id/buttonStopRec"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/buttonRec"
+        android:layout_alignRight="@+id/buttonRec"
+        android:layout_below="@+id/buttonRec"
+        android:onClick="onClickRec"
+        android:text="Stopper l&apos;enregistrement" />
 
     <Button
         android:id="@+id/buttonStopPlay"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/buttonPlayRec"
+        android:layout_alignRight="@+id/buttonPlayRec"
+        android:layout_below="@+id/buttonPlayRec"
         android:onClick="onClickRec"
         android:text="Stopper le playback" />
 
-</LinearLayout>
+    <Button
+        android:id="@+id/buttonRec"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="136dp"
+        android:onClick="onClickRec"
+        android:text="Démarrer l&apos;enregistrement" />
+
+</RelativeLayout>

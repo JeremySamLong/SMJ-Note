@@ -9,6 +9,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.media.MediaPlayer;
 import android.media.MediaRecorder;
+import android.opengl.Visibility;
 import android.os.Bundle;
 import android.os.Environment;
 import android.util.Log;
@@ -23,14 +24,14 @@ public class Rec extends Activity
 	private MediaPlayer mediaPlayer;
 	private MediaRecorder recorder;
 	private String OUTPUT_FILE;
-
+	//private Button stop;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.rec_accueil);
 
-		
+		//Button stop = (Button) findViewById(R.id.buttonRec);
 		//File rep = new File("/SMJ-Note");
 		//rep.mkdirs();
 		
@@ -44,6 +45,7 @@ public class Rec extends Activity
 		case R.id.buttonRec:
 			try{
 				beginRecording();
+				
 			}catch (Exception e) {
 				e.printStackTrace();
 			}

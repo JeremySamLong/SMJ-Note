@@ -14,33 +14,24 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/buttonRec"
-        android:layout_alignLeft="@+id/buttonRec"
-        android:layout_alignRight="@+id/buttonRec"
         android:layout_marginBottom="60dp"
+        android:layout_toRightOf="@+id/addnotebutton"
         android:background="@android:color/transparent"
         android:onClick="onClickNote"
-        android:text="Mes Notes"
+        android:text="Notes"
         android:textColor="@color/bordeaux" />
 
-    <Button
-        android:id="@+id/addnotebutton"
-        android:layout_width="50dp"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/buttonNote"
-        android:layout_alignBottom="@+id/buttonNote"
-        android:layout_alignParentLeft="true"
-        android:layout_marginLeft="46dp"
-        android:background="@drawable/create_note"
-        android:onClick="onClickNote" />
-
-        <Button
-            android:id="@+id/addenregbutton"
-            android:layout_width="50dp"
-            android:layout_height="wrap_content"
-            android:layout_above="@+id/buttonSync"
-            android:layout_alignLeft="@+id/addnotebutton"
-            android:background="@drawable/create_enreg"
-            android:onClick="onClickRec" />
+                <Button
+                    android:id="@+id/buttonSync"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignLeft="@+id/buttonRec"
+                    android:layout_below="@+id/buttonNote"
+                    android:layout_marginTop="22dp"
+                    android:background="@android:color/transparent"
+                    android:onClick="onClickSync"
+                    android:text="Synchroniser"
+                    android:textColor="@color/bordeaux" />
 
                 <Button
                     android:id="@+id/addsyncbutton"
@@ -48,32 +39,39 @@
                     android:layout_height="wrap_content"
                     android:layout_alignBaseline="@+id/buttonSync"
                     android:layout_alignBottom="@+id/buttonSync"
-                    android:layout_alignLeft="@+id/addnotebutton"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginLeft="32dp"
                     android:background="@drawable/create_sync"
                     android:onClick="onClickSync" />
 
                 <Button
-                    android:id="@+id/buttonSync"
-                    android:layout_width="wrap_content"
+                    android:id="@+id/addnotebutton"
+                    android:layout_width="50dp"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/buttonNote"
-                    android:layout_marginTop="18dp"
-                    android:layout_toRightOf="@+id/addsyncbutton"
-                    android:background="@android:color/transparent"
-                    android:onClick="onClickSync"
-                    android:text="Synchroniser"
-                    android:textColor="@color/bordeaux" />
+                    android:layout_alignBaseline="@+id/buttonNote"
+                    android:layout_alignBottom="@+id/buttonNote"
+                    android:layout_alignLeft="@+id/addenregbutton"
+                    android:background="@drawable/create_note"
+                    android:onClick="onClickNote" />
+
+                <Button
+                    android:id="@+id/addenregbutton"
+                    android:layout_width="50dp"
+                    android:layout_height="wrap_content"
+                    android:layout_above="@+id/buttonSync"
+                    android:layout_alignLeft="@+id/addsyncbutton"
+                    android:background="@drawable/create_enreg"
+                    android:onClick="onClickRec" />
 
                 <Button
                     android:id="@+id/buttonRec"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_alignParentRight="true"
                     android:layout_centerVertical="true"
-                    android:layout_marginRight="17dp"
+                    android:layout_toRightOf="@+id/addenregbutton"
                     android:background="@android:color/transparent"
                     android:onClick="onClickRec"
-                    android:text="Mes Enregistrements"
+                    android:text="Enregistrements"
                     android:textColor="@color/bordeaux" />
 
 </RelativeLayout>

@@ -37,15 +37,12 @@ public class NoteSQLite extends ListActivity {
 		Cursor notesCursor = bdd.fetchAllNotes();
 		startManagingCursor(notesCursor);
 
-		// Create an array to specify the fields we want to display in the list
-		// (only TITLE)
+		// Création d'un tableau pour spécifier les champs que nous voulons afficher dans la liste
+		// Avec le titre seulement
 		String[] from = new String[] { NoteBdd.KEY_TITLE };
 
-		// and an array of the fields we want to bind those fields to (in this
-		// case just text1)
 		int[] to = new int[] { R.id.text1 };
 
-		// Now create a simple cursor adapter and set it to display
 		SimpleCursorAdapter notes = new SimpleCursorAdapter(this, R.layout.notes_row, notesCursor, from, to);
 		setListAdapter(notes);
 	}
@@ -54,8 +51,6 @@ public class NoteSQLite extends ListActivity {
 	public boolean onCreateOptionsMenu(Menu menu) {
 		super.onCreateOptionsMenu(menu);
 		menu.add(0, INSERT_ID, 0, R.string.menu_ajout);
-		menu.add(0, INSERT_ID, 0, R.string.menu_sync);
-		menu.add(0, INSERT_ID, 0, R.string.menu_rec);
 		return true;
 	}
 

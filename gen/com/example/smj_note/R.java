@@ -32,28 +32,29 @@ public final class R {
         public static final int notelist=0x7f020004;
     }
     public static final class id {
-        public static final int action_settings=0x7f090015;
-        public static final int addenregbutton=0x7f090003;
+        public static final int action_settings=0x7f090016;
+        public static final int addenregbutton=0x7f090005;
         public static final int addnotebutton=0x7f090002;
-        public static final int addsyncbutton=0x7f090005;
-        public static final int body=0x7f09000e;
+        public static final int addsyncbutton=0x7f090004;
+        public static final int body=0x7f09000f;
         public static final int button1=0x7f09000b;
         public static final int buttonNote=0x7f090000;
         public static final int buttonPlayRec=0x7f090012;
         public static final int buttonRec=0x7f090001;
-        public static final int buttonStopPlay=0x7f090013;
-        public static final int buttonStopRec=0x7f090011;
-        public static final int buttonSync=0x7f090004;
-        public static final int checkBox1=0x7f09000c;
-        public static final int confirm=0x7f09000f;
-        public static final int editText1=0x7f090009;
-        public static final int editText2=0x7f09000a;
-        public static final int listView1=0x7f090014;
-        public static final int text1=0x7f090010;
-        public static final int textView1=0x7f090006;
-        public static final int textView2=0x7f090008;
-        public static final int textView3=0x7f090007;
-        public static final int title=0x7f09000d;
+        public static final int buttonStopPlay=0x7f090014;
+        public static final int buttonStopRec=0x7f090013;
+        public static final int buttonSync=0x7f090003;
+        public static final int checkBox1=0x7f09000a;
+        public static final int confirm=0x7f090010;
+        public static final int editText1=0x7f090008;
+        public static final int editText2=0x7f090009;
+        public static final int listView1=0x7f090015;
+        public static final int text1=0x7f090011;
+        public static final int textView1=0x7f09000c;
+        public static final int textView2=0x7f090007;
+        public static final int textView3=0x7f090006;
+        public static final int textViewTitre=0x7f09000d;
+        public static final int title=0x7f09000e;
     }
     public static final class layout {
         public static final int accueil=0x7f030000;

@@ -11,28 +11,33 @@
     </LinearLayout>
 
     <TextView
-        android:id="@+id/textView1"
+        android:id="@+id/textViewTitre"
         android:layout_width="231dp"
         android:layout_height="50dp"
         android:text="SYNCHRONISATION"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.03"
+        android:text="Si vous souhaitez synchroniser vos notes vocales et écrites, commencer par vous connectez sur www.smj-notes.com, Puis créez-vous un compte."
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+    
+    <TextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_weight="0.88"
-        android:text="Si vous souhaitez synchroniser vos notes vocales et écrites, commencer par vous connectez sur www.smj-notes.com, Puis créez-vous un compte.
-         
-Une fois le compte créé, renseigner votre login et votre mot de passe sur l'application.
-"
+        android:layout_weight="0.17"
+        android:text="Une fois le compte créé, renseigner votre login et votre mot de passe sur l&apos;application."
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
     <Button
         android:id="@+id/button1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="0.07"
+        android:layout_weight="0.01"
         android:onClick="onClickConxSyn"
         android:text="Continuer" />
 

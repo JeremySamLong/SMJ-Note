@@ -5,32 +5,21 @@
     android:background="@drawable/notelist">
 
     <TextView
-        android:id="@+id/textView1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginLeft="22dp"
-        android:layout_marginTop="32dp"
-        android:text="Connexion :"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
-
-    <TextView
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/textView2"
         android:layout_below="@+id/editText1"
         android:layout_marginTop="38dp"
-        android:text="Password :" />
+        android:text="Mot de passe :" />
 
     <EditText
         android:id="@+id/editText2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/textView3"
-        android:layout_alignLeft="@+id/button1"
         android:layout_alignRight="@+id/editText1"
+        android:layout_toRightOf="@+id/textView3"
         android:ems="10"
         android:inputType="textPassword" />
 
@@ -40,7 +29,7 @@
         android:layout_height="wrap_content"
         android:layout_alignBaseline="@+id/textView2"
         android:layout_alignBottom="@+id/textView2"
-        android:layout_alignLeft="@+id/button1"
+        android:layout_toRightOf="@+id/textView3"
         android:ems="10" >
 
         <requestFocus />
@@ -53,7 +42,7 @@
         android:layout_alignLeft="@+id/textView3"
         android:layout_below="@+id/textView3"
         android:layout_marginTop="38dp"
-        android:text="Remember me" />
+        android:text="Rester connecté" />
 
     <Button
         android:id="@+id/button1"
@@ -65,12 +54,22 @@
         android:text="Synchroniser" />
 
     <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="14dp"
+        android:text="Connexion :"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <TextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/textView1"
         android:layout_below="@+id/textView1"
-        android:layout_marginTop="42dp"
+        android:layout_marginTop="60dp"
         android:text="Login :" />
 
 </RelativeLayout>
